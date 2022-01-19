@@ -1,0 +1,56 @@
+package QUIZ;
+import java.util.Scanner;
+import java.util.Arrays;   
+public class QUIZ1 {
+
+	public QUIZ1() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner (System.in);
+		int[] num = new int[9];
+		System.out.println("Please enter 9 number");
+		inputArray(num);
+
+	    System.out.println("The number of elements:  " + num.length);
+	    printArray(num);
+	    
+	    System.out.println("Please input the location of integer you want to search (0-8)");
+		int find = sc.nextInt();
+       	search(num, find);
+       	
+       	Arrays.sort(num);   
+		System.out.println("Elements of array sorted in ascending order: ");  
+		for (int y = 0; y < num.length; y++)   
+		{       
+		System.out.println(num[y]);   
+		}   
+	 }
+	
+	public static void inputArray(int[] number){
+		  int index; 
+		  Scanner input = new Scanner (System.in);
+		for (index = 0; index < number.length;index++)
+           number[index] = input.nextInt();}
+
+	
+	
+	 public static void printArray(int[] number){
+	   for (int index = 0; index < number.length; index++)
+		System.out.println(number[index] + "");
+	}
+
+	 
+	 static int search(int[] num, int searchValue){
+		 for (int j=0; j < num.length; j++) {
+			 if( j == searchValue) {
+				  System.out.println("The search value is " + num[j]);
+				  break;
+			 }
+	 
+		 }
+		return searchValue;
+}
+}
