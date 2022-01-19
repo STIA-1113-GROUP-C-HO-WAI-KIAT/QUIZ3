@@ -19,25 +19,29 @@ public class QUIZ1 {
             System.out.println("2. Display elements of an array");
             System.out.println("3. Search the element within array");
             System.out.println("4. Sort the Array");
-            System.out.print("Enter a number : ");
+            System.out.println("Enter a number : ");
             service = sc.nextInt();
+            System.out.println();
            
             switch (service) 
             {
                 case 1:
                 	System.out.println("Please enter 9 number");
             		inputArray(num);
+            		System.out.println();
                     break;
                     
                 case 2:
                 	 System.out.println("The number of elements:  " + num.length);
                     printArray(num);
+                    System.out.println();
                     break;
                     
                 case 3:
                 	System.out.println("Please input the location of integer you want to search (0-8)");
             		int find = sc.nextInt();
                    	search(num, find);
+                   	System.out.println();
                     break;
                     
                 case 4:
@@ -47,9 +51,11 @@ public class QUIZ1 {
             		{       
             		System.out.println(num[y]);   
             		}   
+            		System.out.println();
                     break;               
                 default:
                 	System.out.println("What'wrong with you?");
+                	System.out.println();
                 	break;
             }
         } while (service == 1|| service == 2|| service == 3|| service == 4);
@@ -84,4 +90,3 @@ public class QUIZ1 {
 		return searchValue;
 }
 }
-
