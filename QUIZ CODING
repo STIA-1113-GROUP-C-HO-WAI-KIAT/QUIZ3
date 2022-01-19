@@ -11,23 +11,53 @@ public class QUIZ1 {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner (System.in);
 		int[] num = new int[9];
-		System.out.println("Please enter 9 number");
-		inputArray(num);
-
-	    System.out.println("The number of elements:  " + num.length);
-	    printArray(num);
+		int service;
+		do 
+        {
+			System.out.println("Select an SERVICE : ");
+            System.out.println("1. Accept elements of an array");
+            System.out.println("2. Display elements of an array");
+            System.out.println("3. Search the element within array");
+            System.out.println("4. Sort the Array");
+            System.out.print("Enter a number : ");
+            service = sc.nextInt();
+           
+            switch (service) 
+            {
+                case 1:
+                	System.out.println("Please enter 9 number");
+            		inputArray(num);
+                    break;
+                    
+                case 2:
+                	 System.out.println("The number of elements:  " + num.length);
+                    printArray(num);
+                    break;
+                    
+                case 3:
+                	System.out.println("Please input the location of integer you want to search (0-8)");
+            		int find = sc.nextInt();
+                   	search(num, find);
+                    break;
+                    
+                case 4:
+                	Arrays.sort(num);   
+            		System.out.println("Elements of array sorted in ascending order: ");  
+            		for (int y = 0; y < num.length; y++)   
+            		{       
+            		System.out.println(num[y]);   
+            		}   
+                    break;               
+                default:
+                	System.out.println("What'wrong with you?");
+                	break;
+            }
+        } while (service == 1|| service == 2|| service == 3|| service == 4);
+    }
+		
 	    
-	    System.out.println("Please input the location of integer you want to search (0-8)");
-		int find = sc.nextInt();
-       	search(num, find);
-       	
-       	Arrays.sort(num);   
-		System.out.println("Elements of array sorted in ascending order: ");  
-		for (int y = 0; y < num.length; y++)   
-		{       
-		System.out.println(num[y]);   
-		}   
-	 }
+       
+	 
 	
 	public static void inputArray(int[] number){
 		  int index; 
@@ -54,3 +84,4 @@ public class QUIZ1 {
 		return searchValue;
 }
 }
+
